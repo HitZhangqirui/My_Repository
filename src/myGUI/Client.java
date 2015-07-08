@@ -35,6 +35,8 @@ public class Client extends JFrame {
 	private JTable site_id;
 	private JTable route_site;
 	
+	private JTable all_infor;
+	
 	Object [][] data_bus = new Object [100][2];
 	Object [][] data_bus_temp = new Object [1][2];
 	Object [][] data_diver = new Object [100][3];
@@ -47,8 +49,10 @@ public class Client extends JFrame {
 	Object [][] data_record_bus = new Object [100][4];
 	Object [][] data_record_diver = new Object [100][4];
 	
-	Object [][] data_site_id = new Object [100][1];
+	Object [][] data_site_id = new Object [100][2];
 	Object [][] data_route_site = new Object [100][2];
+	
+	Object [][] all_data = new Object [100][3];
 	
 	private JTextField textField_1;
 	private JTextField textField_3;
@@ -77,6 +81,18 @@ public class Client extends JFrame {
 	 */
 	@SuppressWarnings("rawtypes")
 	public Client() {
+		
+		String [] all_colu = {"线路名","车牌号","司机名"};
+		String [] colu_bus = {"车牌号","状态"};
+		String [] colu_diver = {"编号","司机名","状态"};
+		String [] clou_route_site = {"编号","站点名"};
+		String [] clou_site_id = {"请输入站点编号","次序"};
+		String [] clou_site = {"编号","站点名"};
+		String [] colu_record_route = {"日期","线路名","车次"};
+		String [] colu_record_bus = {"日期","车牌号","前状态","后状态"};
+		String [] colu_record_diver = {"日期","司机名","前状态","后状态"};
+
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 726, 506);
 		contentPane = new JPanel();
@@ -89,9 +105,13 @@ public class Client extends JFrame {
 		tabbedPane.setBounds(10, 10, 690, 447);
 		contentPane.add(tabbedPane);
 		
-		JPanel panel = new JPanel();
-		panel.setToolTipText("\u5B9E\u65F6\u60C5\u51B5");
-		tabbedPane.addTab("实时情况", null, panel, null);
+		
+		all_data[0][0] = new Integer(123);
+		all_data[0][1] = new Integer(123);
+		all_data[0][2] = "张琦瑞";
+		all_infor = new JTable(all_data, all_colu);
+		JScrollPane scrollPane_12 = new JScrollPane(all_infor);
+		tabbedPane.addTab("当前公交情况", null, scrollPane_12, null);
 		
 		JPanel panel_1 = new JPanel();
 		tabbedPane.addTab("车辆管理", null, panel_1, null);
@@ -101,7 +121,7 @@ public class Client extends JFrame {
 		tabbedPane_1.setBounds(0, 0, 685, 418);
 		panel_1.add(tabbedPane_1);
 		
-		String [] colu_bus = {"车牌号","状态"};
+		
 		data_bus[0][0] = new Integer(123);
 		data_bus[0][1] = "空闲";
 		table_bus = new JTable(data_bus,colu_bus);
@@ -185,7 +205,7 @@ public class Client extends JFrame {
 		tabbedPane_2.setBounds(0, 0, 685, 418);
 		panel_2.add(tabbedPane_2);
 		
-		String [] colu_diver = {"编号","司机名","状态"};
+		
 		data_diver[0][0] = new Integer(123);
 		data_diver[0][1] = "张琦瑞";
 		data_diver[0][2] = "空闲";
@@ -295,7 +315,6 @@ public class Client extends JFrame {
 		tabbedPane_5.addTab("增加线路", null, panel_5, null);
 		panel_5.setLayout(null);
 		
-		String [] clou_route_site = {"编号","站点名"};
 		data_route_site[0][0] = new Integer(123);
 		data_route_site[0][1] = "哈工大";
 		route_site = new JTable(data_route_site,clou_route_site);
@@ -303,25 +322,49 @@ public class Client extends JFrame {
 		scrollPane_10.setBounds(10, 10, 221, 369);
 		panel_5.add(scrollPane_10);
 		
-		String [] clou_site_id = {"请输入站点编号"};
 		data_site_id[0][0] = new Integer(123);
+		data_site_id[0][1] = new Integer(1);
 		site_id = new JTable(data_route_site,clou_site_id);
 		JScrollPane scrollPane_11 = new JScrollPane(site_id);
-		scrollPane_11.setBounds(290, 10, 129, 369);
+		scrollPane_11.setBounds(259, 10, 221, 369);
 		panel_5.add(scrollPane_11);
 		
 		JButton button_11 = new JButton("\u63D0\u4EA4");
-		button_11.setBounds(461, 356, 60, 23);
+		button_11.setBounds(530, 356, 60, 23);
 		panel_5.add(button_11);
 		
 		JLabel label_10 = new JLabel("\u8BF7\u8F93\u5165\u7EBF\u8DEF\u540D");
-		label_10.setBounds(442, 30, 79, 29);
+		label_10.setBounds(511, 10, 79, 29);
 		panel_5.add(label_10);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(442, 69, 79, 29);
+		textField_5.setBounds(511, 49, 79, 29);
 		panel_5.add(textField_5);
 		textField_5.setColumns(10);
+		
+		JLabel label_11 = new JLabel("\u53D1\u8F66\u65F6\u95F4");
+		label_11.setBounds(511, 88, 79, 29);
+		panel_5.add(label_11);
+		
+		JComboBox comboBox_8 = new JComboBox();
+		comboBox_8.setBounds(511, 127, 79, 29);
+		panel_5.add(comboBox_8);
+		
+		JLabel label_12 = new JLabel("\u6536\u8F66\u65F6\u95F4");
+		label_12.setBounds(511, 171, 79, 29);
+		panel_5.add(label_12);
+		
+		JComboBox comboBox_9 = new JComboBox();
+		comboBox_9.setBounds(511, 210, 79, 29);
+		panel_5.add(comboBox_9);
+		
+		JLabel label_13 = new JLabel("\u5F80\u8FD4\u65F6\u95F4");
+		label_13.setBounds(511, 254, 79, 29);
+		panel_5.add(label_13);
+		
+		JComboBox comboBox_10 = new JComboBox();
+		comboBox_10.setBounds(511, 290, 79, 29);
+		panel_5.add(comboBox_10);
 		
 		JPanel panel_15 = new JPanel();
 		tabbedPane_5.addTab("删除线路", null, panel_15, null);
@@ -347,7 +390,6 @@ public class Client extends JFrame {
 		tabbedPane_3.setBounds(0, 0, 685, 418);
 		panel_4.add(tabbedPane_3);
 		
-		String [] clou_site = {"编号","站点名"};
 		data_site[0][0] = new Integer(123);
 		data_site[0][1] = "哈工大";
 		table_site = new JTable(data_site,clou_site);
@@ -415,7 +457,6 @@ public class Client extends JFrame {
 		tabbedPane_4.setBounds(0, 0, 685, 408);
 		panel_14.add(tabbedPane_4);
 		
-		String [] colu_record_route = {"日期","线路名","车次"};
 		data_record_route[0][0] = new Integer(123);
 		data_record_route[0][1] = "12号路";
 		data_record_route[0][2] = new Integer(123);
@@ -423,7 +464,7 @@ public class Client extends JFrame {
 		JScrollPane scrollPane_7 = new JScrollPane(record_route);
 		tabbedPane_4.addTab("线路日志", null, scrollPane_7, null);
 		
-		String [] colu_record_bus = {"日期","车牌号","前状态","后状态"};
+		
 		data_record_bus[0][0] = new Integer(123);
 		data_record_bus[0][1] = new Integer(123);
 		data_record_bus[0][2] = "空闲";
@@ -432,7 +473,7 @@ public class Client extends JFrame {
 		JScrollPane scrollPane_8 = new JScrollPane(record_bus);
 		tabbedPane_4.addTab("车辆日志", null, scrollPane_8, null);
 		
-		String [] colu_record_diver = {"日期","司机名","前状态","后状态"};
+		
 		data_record_diver[0][0] = new Integer(123);
 		data_record_diver[0][2] = "张琦瑞";
 		data_record_diver[0][1] = "空闲";
@@ -440,6 +481,7 @@ public class Client extends JFrame {
 		record_diver = new JTable(data_record_diver, colu_record_diver);
 		JScrollPane scrollPane_9 = new JScrollPane(record_diver);
 		tabbedPane_4.addTab("司机日志", null, scrollPane_9, null);
+		
 	}
 	
 	class update_bus_Listener implements ActionListener {
