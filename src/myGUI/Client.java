@@ -63,6 +63,9 @@ public class Client extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	 
+	 
+	 /**ä¿éœ„ç¿”æ¥æ£è›‹**/
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -82,15 +85,15 @@ public class Client extends JFrame {
 	@SuppressWarnings("rawtypes")
 	public Client() {
 		
-		String [] all_colu = {"ÏßÂ·Ãû","³µÅÆºÅ","Ë¾»úÃû"};
-		String [] colu_bus = {"³µÅÆºÅ","×´Ì¬"};
-		String [] colu_diver = {"±àºÅ","Ë¾»úÃû","×´Ì¬"};
-		String [] clou_route_site = {"±àºÅ","Õ¾µãÃû"};
-		String [] clou_site_id = {"ÇëÊäÈëÕ¾µã±àºÅ","´ÎĞò"};
-		String [] clou_site = {"±àºÅ","Õ¾µãÃû"};
-		String [] colu_record_route = {"ÈÕÆÚ","ÏßÂ·Ãû","³µ´Î"};
-		String [] colu_record_bus = {"ÈÕÆÚ","³µÅÆºÅ","Ç°×´Ì¬","ºó×´Ì¬"};
-		String [] colu_record_diver = {"ÈÕÆÚ","Ë¾»úÃû","Ç°×´Ì¬","ºó×´Ì¬"};
+		String [] all_colu = {"çº¿è·¯å","è½¦ç‰Œå·","å¸æœºå"};
+		String [] colu_bus = {"è½¦ç‰Œå·","çŠ¶æ€"};
+		String [] colu_diver = {"ç¼–å·","å¸æœºå","çŠ¶æ€"};
+		String [] clou_route_site = {"ç¼–å·","ç«™ç‚¹å"};
+		String [] clou_site_id = {"è¯·è¾“å…¥ç«™ç‚¹ç¼–å·","æ¬¡åº"};
+		String [] clou_site = {"ç¼–å·","ç«™ç‚¹å"};
+		String [] colu_record_route = {"æ—¥æœŸ","çº¿è·¯å","è½¦æ¬¡"};
+		String [] colu_record_bus = {"æ—¥æœŸ","è½¦ç‰Œå·","å‰çŠ¶æ€","åçŠ¶æ€"};
+		String [] colu_record_diver = {"æ—¥æœŸ","å¸æœºå","å‰çŠ¶æ€","åçŠ¶æ€"};
 
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -108,13 +111,13 @@ public class Client extends JFrame {
 		
 		all_data[0][0] = new Integer(123);
 		all_data[0][1] = new Integer(123);
-		all_data[0][2] = "ÕÅçùÈğ";
+		all_data[0][2] = "å¼ ç¦ç‘";
 		all_infor = new JTable(all_data, all_colu);
 		JScrollPane scrollPane_12 = new JScrollPane(all_infor);
-		tabbedPane.addTab("µ±Ç°¹«½»Çé¿ö", null, scrollPane_12, null);
+		tabbedPane.addTab("å½“å‰å…¬äº¤æƒ…å†µ", null, scrollPane_12, null);
 		
 		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("³µÁ¾¹ÜÀí", null, panel_1, null);
+		tabbedPane.addTab("è½¦è¾†ç®¡ç†", null, panel_1, null);
 		panel_1.setLayout(null);
 		
 		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
@@ -123,16 +126,16 @@ public class Client extends JFrame {
 		
 		
 		data_bus[0][0] = new Integer(123);
-		data_bus[0][1] = "¿ÕÏĞ";
+		data_bus[0][1] = "ç©ºé—²";
 		table_bus = new JTable(data_bus,colu_bus);
 		JScrollPane scrollPane = new JScrollPane(table_bus);
-		tabbedPane_1.addTab("²é¿´³µÁ¾×´Ì¬", null, scrollPane, null);
+		tabbedPane_1.addTab("æŸ¥çœ‹è½¦è¾†çŠ¶æ€", null, scrollPane, null);
 		
 		JPanel panel_7 = new JPanel();
-		tabbedPane_1.addTab("Ôö¼Ó³µÁ¾", null, panel_7, null);
+		tabbedPane_1.addTab("å¢åŠ è½¦è¾†", null, panel_7, null);
 		panel_7.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("³µÅÆºÅ");
+		JLabel lblNewLabel = new JLabel("è½¦ç‰Œå·");
 		lblNewLabel.setBounds(23, 38, 41, 28);
 		panel_7.add(lblNewLabel);
 		
@@ -146,7 +149,7 @@ public class Client extends JFrame {
 		panel_7.add(button);
 		
 		JPanel panel_8 = new JPanel();
-		tabbedPane_1.addTab("É¾³ı³µÁ¾", null, panel_8, null);
+		tabbedPane_1.addTab("åˆ é™¤è½¦è¾†", null, panel_8, null);
 		panel_8.setLayout(null);
 		
 		JLabel label = new JLabel("\u8F66\u724C\u53F7");
@@ -162,10 +165,10 @@ public class Client extends JFrame {
 		panel_8.add(comboBox);
 		
 		JPanel panel_9 = new JPanel();
-		tabbedPane_1.addTab("³µÁ¾µ÷¶È", null, panel_9, null);
+		tabbedPane_1.addTab("è½¦è¾†è°ƒåº¦", null, panel_9, null);
 		panel_9.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("³µÅÆºÅ");
+		JLabel lblNewLabel_1 = new JLabel("è½¦ç‰Œå·");
 		lblNewLabel_1.setBounds(23, 38, 41, 28);
 		panel_9.add(lblNewLabel_1);
 		
@@ -173,7 +176,7 @@ public class Client extends JFrame {
 		comboBox_1.setBounds(80, 42, 66, 21);
 		panel_9.add(comboBox_1);
 		
-		JButton btnNewButton = new JButton("È·¶¨");
+		JButton btnNewButton = new JButton("ç¡®å®š");
 		btnNewButton.setBounds(23, 94, 60, 23);
 		panel_9.add(btnNewButton);
 		
@@ -187,7 +190,7 @@ public class Client extends JFrame {
 		
 		
 		data_bus_temp[0][0] = new Integer(123);
-		data_bus_temp[0][1] = "¿ÕÏĞ";
+		data_bus_temp[0][1] = "ç©ºé—²";
 		table_bus_temp = new JTable(data_bus_temp,colu_bus);
 		JScrollPane scrollPane_1 = new JScrollPane(table_bus_temp);
 		scrollPane_1.setBounds(23, 127, 258, 51);
@@ -198,7 +201,7 @@ public class Client extends JFrame {
 		panel_9.add(button_2);
 		
 		JPanel panel_2 = new JPanel();
-		tabbedPane.addTab("Ë¾»ú¹ÜÀí", null, panel_2, null);
+		tabbedPane.addTab("å¸æœºç®¡ç†", null, panel_2, null);
 		panel_2.setLayout(null);
 		
 		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
@@ -207,14 +210,14 @@ public class Client extends JFrame {
 		
 		
 		data_diver[0][0] = new Integer(123);
-		data_diver[0][1] = "ÕÅçùÈğ";
-		data_diver[0][2] = "¿ÕÏĞ";
+		data_diver[0][1] = "å¼ ç¦ç‘";
+		data_diver[0][2] = "ç©ºé—²";
 		table_diver = new JTable(data_diver,colu_diver);
 		JScrollPane scrollPane_2 = new JScrollPane(table_diver);
-		tabbedPane_2.addTab("²é¿´Ë¾»ú×´Ì¬", null, scrollPane_2, null);
+		tabbedPane_2.addTab("æŸ¥çœ‹å¸æœºçŠ¶æ€", null, scrollPane_2, null);
 		
 		JPanel panel_6 = new JPanel();
-		tabbedPane_2.addTab("Ôö¼ÓË¾»ú", null, panel_6, null);
+		tabbedPane_2.addTab("å¢åŠ å¸æœº", null, panel_6, null);
 		panel_6.setLayout(null);
 		
 		JLabel label_2 = new JLabel("\u53F8\u673A\u540D");
@@ -226,7 +229,7 @@ public class Client extends JFrame {
 		panel_6.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("Ôö¼Ó");
+		JButton btnNewButton_1 = new JButton("å¢åŠ ");
 		btnNewButton_1.setBounds(26, 133, 60, 23);
 		panel_6.add(btnNewButton_1);
 		
@@ -240,10 +243,10 @@ public class Client extends JFrame {
 		textField_3.setColumns(10);
 		
 		JPanel panel_10 = new JPanel();
-		tabbedPane_2.addTab("É¾³ıË¾»ú", null, panel_10, null);
+		tabbedPane_2.addTab("åˆ é™¤å¸æœº", null, panel_10, null);
 		panel_10.setLayout(null);
 		
-		JLabel lblNewLabel_2 = new JLabel("±àºÅ");
+		JLabel lblNewLabel_2 = new JLabel("ç¼–å·");
 		lblNewLabel_2.setBounds(37, 41, 41, 28);
 		panel_10.add(lblNewLabel_2);
 		
@@ -256,8 +259,8 @@ public class Client extends JFrame {
 		panel_10.add(comboBox_3);
 		
 		data_diver_delete[0][0] = new Integer(123);
-		data_diver_delete[0][1] = "ÕÅçùÈğ";
-		data_diver_delete[0][2] = "¿ÕÏĞ";
+		data_diver_delete[0][1] = "å¼ ç¦ç‘";
+		data_diver_delete[0][2] = "ç©ºé—²";
 		table_diver_delete = new JTable(data_diver_delete,colu_diver);
 		JScrollPane scrollPane_4 = new JScrollPane(table_diver_delete);
 		scrollPane_4.setBounds(37, 145, 232, 52);
@@ -268,7 +271,7 @@ public class Client extends JFrame {
 		panel_10.add(button_5);
 		
 		JPanel panel_11 = new JPanel();
-		tabbedPane_2.addTab("Ë¾»úµ÷¶È", null, panel_11, null);
+		tabbedPane_2.addTab("å¸æœºè°ƒåº¦", null, panel_11, null);
 		panel_11.setLayout(null);
 		
 		JLabel label_3 = new JLabel("\u7F16\u53F7");
@@ -284,8 +287,8 @@ public class Client extends JFrame {
 		panel_11.add(button_4);
 		
 		data_diver_dispatch[0][0] = new Integer(123);
-		data_diver_dispatch[0][1] = "ÕÅçùÈğ";
-		data_diver_dispatch[0][2] = "¿ÕÏĞ";
+		data_diver_dispatch[0][1] = "å¼ ç¦ç‘";
+		data_diver_dispatch[0][2] = "ç©ºé—²";
 		table_diver_dispatch = new JTable(data_diver_dispatch,colu_diver);
 		JScrollPane scrollPane_3 = new JScrollPane(table_diver_dispatch);
 		scrollPane_3.setBounds(37, 145, 232, 52);
@@ -304,7 +307,7 @@ public class Client extends JFrame {
 		panel_11.add(button_6);
 		
 		JPanel panel_3 = new JPanel();
-		tabbedPane.addTab("ÏßÂ·¹ÜÀí", null, panel_3, null);
+		tabbedPane.addTab("çº¿è·¯ç®¡ç†", null, panel_3, null);
 		panel_3.setLayout(null);
 		
 		JTabbedPane tabbedPane_5 = new JTabbedPane(JTabbedPane.TOP);
@@ -312,11 +315,11 @@ public class Client extends JFrame {
 		panel_3.add(tabbedPane_5);
 		
 		JPanel panel_5 = new JPanel();
-		tabbedPane_5.addTab("Ôö¼ÓÏßÂ·", null, panel_5, null);
+		tabbedPane_5.addTab("å¢åŠ çº¿è·¯", null, panel_5, null);
 		panel_5.setLayout(null);
 		
 		data_route_site[0][0] = new Integer(123);
-		data_route_site[0][1] = "¹ş¹¤´ó";
+		data_route_site[0][1] = "å“ˆå·¥å¤§";
 		route_site = new JTable(data_route_site,clou_route_site);
 		JScrollPane scrollPane_10 = new JScrollPane(route_site);
 		scrollPane_10.setBounds(10, 10, 221, 369);
@@ -367,7 +370,7 @@ public class Client extends JFrame {
 		panel_5.add(comboBox_10);
 		
 		JPanel panel_15 = new JPanel();
-		tabbedPane_5.addTab("É¾³ıÏßÂ·", null, panel_15, null);
+		tabbedPane_5.addTab("åˆ é™¤çº¿è·¯", null, panel_15, null);
 		panel_15.setLayout(null);
 		
 		JLabel label_9 = new JLabel("\u7EBF\u8DEF\u540D");
@@ -383,7 +386,7 @@ public class Client extends JFrame {
 		panel_15.add(button_10);
 		
 		JPanel panel_4 = new JPanel();
-		tabbedPane.addTab("Õ¾µã¹ÜÀí", null, panel_4, null);
+		tabbedPane.addTab("ç«™ç‚¹ç®¡ç†", null, panel_4, null);
 		panel_4.setLayout(null);
 		
 		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
@@ -391,13 +394,13 @@ public class Client extends JFrame {
 		panel_4.add(tabbedPane_3);
 		
 		data_site[0][0] = new Integer(123);
-		data_site[0][1] = "¹ş¹¤´ó";
+		data_site[0][1] = "å“ˆå·¥å¤§";
 		table_site = new JTable(data_site,clou_site);
 		JScrollPane scrollPane_5 = new JScrollPane(table_site);
-		tabbedPane_3.addTab("²é¿´ËùÓĞÕ¾µã", null, scrollPane_5, null);
+		tabbedPane_3.addTab("æŸ¥çœ‹æ‰€æœ‰ç«™ç‚¹", null, scrollPane_5, null);
 		
 		JPanel panel_12 = new JPanel();
-		tabbedPane_3.addTab("Ôö¼ÓÕ¾µã", null, panel_12, null);
+		tabbedPane_3.addTab("å¢åŠ ç«™ç‚¹", null, panel_12, null);
 		panel_12.setLayout(null);
 		
 		JLabel label_6 = new JLabel("\u7F16\u53F7");
@@ -423,7 +426,7 @@ public class Client extends JFrame {
 		panel_12.add(button_7);
 		
 		JPanel panel_13 = new JPanel();
-		tabbedPane_3.addTab("É¾³ıÕ¾µã", null, panel_13, null);
+		tabbedPane_3.addTab("åˆ é™¤ç«™ç‚¹", null, panel_13, null);
 		panel_13.setLayout(null);
 		
 		JLabel label_8 = new JLabel("\u7F16\u53F7");
@@ -439,7 +442,7 @@ public class Client extends JFrame {
 		panel_13.add(button_8);
 		
 		data_site_temp[0][0] = new Integer(123);
-		data_site_temp[0][1] = "¹ş¹¤´ó";
+		data_site_temp[0][1] = "å“ˆå·¥å¤§";
 		table_site_temp = new JTable(data_site_temp,clou_site);
 		JScrollPane scrollPane_6 = new JScrollPane(table_site_temp);
 		scrollPane_6.setBounds(37, 145, 232, 52);
@@ -450,7 +453,7 @@ public class Client extends JFrame {
 		panel_13.add(button_9);
 		
 		JPanel panel_14 = new JPanel();
-		tabbedPane.addTab("ÈÕÖ¾", null, panel_14, null);
+		tabbedPane.addTab("æ—¥å¿—", null, panel_14, null);
 		panel_14.setLayout(null);
 		
 		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
@@ -458,29 +461,29 @@ public class Client extends JFrame {
 		panel_14.add(tabbedPane_4);
 		
 		data_record_route[0][0] = new Integer(123);
-		data_record_route[0][1] = "12ºÅÂ·";
+		data_record_route[0][1] = "12å·è·¯";
 		data_record_route[0][2] = new Integer(123);
 		record_route = new JTable(data_record_route, colu_record_route);
 		JScrollPane scrollPane_7 = new JScrollPane(record_route);
-		tabbedPane_4.addTab("ÏßÂ·ÈÕÖ¾", null, scrollPane_7, null);
+		tabbedPane_4.addTab("çº¿è·¯æ—¥å¿—", null, scrollPane_7, null);
 		
 		
 		data_record_bus[0][0] = new Integer(123);
 		data_record_bus[0][1] = new Integer(123);
-		data_record_bus[0][2] = "¿ÕÏĞ";
-		data_record_bus[0][3] = "ÕıÔÚÔËĞĞ";
+		data_record_bus[0][2] = "ç©ºé—²";
+		data_record_bus[0][3] = "æ­£åœ¨è¿è¡Œ";
 		record_bus = new JTable(data_record_bus, colu_record_bus);
 		JScrollPane scrollPane_8 = new JScrollPane(record_bus);
-		tabbedPane_4.addTab("³µÁ¾ÈÕÖ¾", null, scrollPane_8, null);
+		tabbedPane_4.addTab("è½¦è¾†æ—¥å¿—", null, scrollPane_8, null);
 		
 		
 		data_record_diver[0][0] = new Integer(123);
-		data_record_diver[0][2] = "ÕÅçùÈğ";
-		data_record_diver[0][1] = "¿ÕÏĞ";
-		data_record_diver[0][1] = "ÕıÔÚÔËĞĞ";
+		data_record_diver[0][2] = "å¼ ç¦ç‘";
+		data_record_diver[0][1] = "ç©ºé—²";
+		data_record_diver[0][1] = "æ­£åœ¨è¿è¡Œ";
 		record_diver = new JTable(data_record_diver, colu_record_diver);
 		JScrollPane scrollPane_9 = new JScrollPane(record_diver);
-		tabbedPane_4.addTab("Ë¾»úÈÕÖ¾", null, scrollPane_9, null);
+		tabbedPane_4.addTab("å¸æœºæ—¥å¿—", null, scrollPane_9, null);
 		
 	}
 	
@@ -489,7 +492,7 @@ public class Client extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			data_bus[0][0] = new Integer(234);
-			data_bus[0][1] = "ÕıÔÚÔËĞĞ";
+			data_bus[0][1] = "æ­£åœ¨è¿è¡Œ";
 			table_bus.updateUI();
 		}
 	}
@@ -499,8 +502,8 @@ public class Client extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			
-//			data_diver[0][0] = "ÕÅçùÈğ";
-			data_diver[0][2] = "ÕıÔÚÔËĞĞ";
+//			data_diver[0][0] = "å¼ ç¦ç‘";
+			data_diver[0][2] = "æ­£åœ¨è¿è¡Œ";
 			table_diver.updateUI();
 		}
 	}
